@@ -43,8 +43,10 @@ namespace SerilogDemo
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            
-            app.UseSerilogRequestLogging();
+
+            // [+] SeriLog Changes
+            app.UseSerilogRequestLogging(); 
+            // [-] SeriLog Changes
 
             app.UseRouting();
 

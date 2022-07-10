@@ -15,7 +15,7 @@ namespace SerilogDemo
     {
         public static void Main(string[] args)
         {
-
+            // [+] SeriLog Changes
             // Configuring the Serilog settings via the appsetting.json file
 
             // STEP 1
@@ -48,13 +48,15 @@ namespace SerilogDemo
             {
                 Log.CloseAndFlush();
             }
-
+            // [-] SeriLog Changes
 
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                // [+] SeriLog Changes
                 .UseSerilog() // STEP 4
+                // [-] SeriLog Changes
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
